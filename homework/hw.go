@@ -19,7 +19,6 @@ import (
 )
 
 type Moose struct {
-	Id      int
 	Weight  int
 	Speed   int
 	Crossed bool
@@ -42,6 +41,12 @@ func CreateMoose(weight int, speed int) (*Moose, error) {
 	moose.Speed = speed
 	moose.Crossed = false
 	return moose, nil
+}
+
+func CreateBridge() *Bridge {
+	bridge := new(Bridge)
+	bridge.Capacity = 10000
+	return bridge
 }
 
 /*
@@ -70,12 +75,6 @@ func PrintMooses(Mooses []*Moose) {
 		fmt.Print(*moose, " ")
 	}
 	fmt.Println()
-}
-
-func CreateBridge() *Bridge {
-	bridge := new(Bridge)
-	bridge.Capacity = 10000
-	return bridge
 }
 
 // A Moose Attempts To Cross The Bridge
